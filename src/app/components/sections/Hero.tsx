@@ -1,9 +1,11 @@
 import React from 'react'
+
 type HeroProps = {
   title?: string
   subtitle?: string
   backgroundUrl?: string
 }
+
 const Hero: React.FC<HeroProps> = React.memo(({
   title = 'Welcome to Rekaz Builder',
   subtitle = 'Build your website visually using pre-made sections.',
@@ -22,5 +24,7 @@ const Hero: React.FC<HeroProps> = React.memo(({
     </section>
   )
 })
+
+Hero.displayName = "Hero"
 
 export default Hero
