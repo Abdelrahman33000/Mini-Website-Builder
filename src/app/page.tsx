@@ -508,12 +508,14 @@ export type FooterItem = {
   text: string
 }
 
+
 // إعادة تعريف SectionType باستخدام Union Types لتمييز الـ props حسب النوع
 export type SectionType =
   | { id: string; type: 'header'; props: { links: HeaderLink[] } }
   | { id: string; type: 'hero'; props: { title?: string; subtitle?: string; backgroundUrl?: string } }
   | { id: string; type: 'footer'; props: { footerItems: FooterItem[] } }
 
+  
 export default function Home() {
   const [sections, setSections] = useState<SectionType[]>([])
   const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null)
