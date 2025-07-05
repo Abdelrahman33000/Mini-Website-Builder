@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 type HeroProps = {
-  title?: string
-  subtitle?: string
-  backgroundUrl?: string
-}
+  title?: string;
+  subtitle?: string;
+  backgroundUrl?: string;
+};
 
-const Hero: React.FC<HeroProps> = React.memo(({
+const HeroComponent: React.FC<HeroProps> = ({
   title = 'Welcome to Rekaz Builder',
   subtitle = 'Build your website visually using pre-made sections.',
   backgroundUrl = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
@@ -22,9 +22,10 @@ const Hero: React.FC<HeroProps> = React.memo(({
         <p className="text-md md:text-xl animate-fade-in delay-200">{subtitle}</p>
       </div>
     </section>
-  )
-})
+  );
+};
 
-Hero.displayName = "Hero"
+const Hero = React.memo(HeroComponent);
+Hero.displayName = 'Hero';
 
-export default Hero
+export default Hero;
