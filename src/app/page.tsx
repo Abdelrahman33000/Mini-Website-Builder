@@ -616,7 +616,15 @@ export default function Home() {
             onClick={() => setSelectedSectionId(section.id)}
             className={`${baseClasses} ${selectedClasses}`}
           >
-            {section.type === 'hero' && <Hero {...section.props} />}
+            {/* {section.type === 'hero' && <Hero {...section.props} />} */}
+
+{section.type === 'hero' && (
+  <Hero
+    title={section.props.title as string}
+    subtitle={section.props.subtitle as string}
+    backgroundUrl={section.props.backgroundUrl as string}
+  />
+)}
 
             {section.type === 'header' && (
               <div className="bg-blue-100 text-blue-800 p-4 rounded space-y-2">
@@ -979,7 +987,7 @@ function FooterEditor({ props, onChange }: FooterEditorProps) {
       >
         Add Footer Item
       </button>
-      
+
     </div>
   )
 }
