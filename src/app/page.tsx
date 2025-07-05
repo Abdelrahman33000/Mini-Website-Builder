@@ -19,7 +19,7 @@ export type SectionType = {
   id: string
   type: 'header' | 'hero' | 'footer'
   props: {
-    [key: string]: any
+    [key: string]: unknown
     links?: HeaderLink[]
     footerItems?: FooterItem[] 
   }
@@ -334,7 +334,7 @@ function HeroEditor({ props, onChange }: HeroEditorProps) {
   )
 }
 
-// Header Editor
+// Header 
 type HeaderEditorProps = {
   props: {
     links?: HeaderLink[]
